@@ -105,7 +105,7 @@ module.exports = {
 
         template = $(template);
 
-        if(template.size() != 1) {
+        if(template.length != 1) {
             throw new Error("Bitcoin address template DOM does not contain a single element");
         }
 
@@ -171,7 +171,7 @@ module.exports = {
             }
 
             // Make sure we don't apply the template on the template itself
-            if($this.parents("#" + self.config.template).size() > 0) {
+            if($this.parents("#" + self.config.template).length > 0) {
                 return;
             }
 
@@ -245,7 +245,7 @@ module.exports = {
         var qrContainer = elem.find(".bitcoin-address-qr-container");
 
         // Lazily generate the QR code
-        if(qrContainer.children().size() === 0) {
+        if(qrContainer.children().length === 0) {
             this.generateQR(qrContainer);
         }
 
